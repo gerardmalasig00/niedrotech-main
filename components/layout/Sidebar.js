@@ -1,32 +1,33 @@
-import Link from "next/link"
-import { useState } from "react"
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Sidebar() {
-    const [isActive, setIsActive] = useState({
-        status: false,
-        key: "",
-    })
+  const [isActive, setIsActive] = useState({
+    status: false,
+    key: "",
+  });
 
-    const handleToggle = (key) => {
-        if (isActive.key === key) {
-            setIsActive({
-                status: false,
-            })
-        } else {
-            setIsActive({
-                status: true,
-                key,
-            })
-        }
+  const handleToggle = (key) => {
+    if (isActive.key === key) {
+      setIsActive({
+        status: false,
+      });
+    } else {
+      setIsActive({
+        status: true,
+        key,
+      });
     }
-    return (
-        <>
-            <ul className="navbar_nav getmobilemenu">
-                <li className="menu-item nav-item menu-item-has-children dropdown mennucolumn_full-six">
-                    <Link href="/" className="nav_link">
-                        <span className="text-link"> Home </span>
-                    </Link>
-                    <ul className="sub_menu" style={{ display: `${isActive.key == 1 ? "block" : "none"}` }}>
+  };
+  return (
+    <>
+      <ul className="navbar_nav getmobilemenu">
+        <li className="menu-item nav-item menu-item-has-children dropdown mennucolumn_full-six">
+          <Link href="/" className="nav_link">
+            <span className="text-link"> Home </span>
+          </Link>
+          {/* REMOVED HOME SUB MENU */}
+          {/* <ul className="sub_menu" style={{ display: `${isActive.key == 1 ? "block" : "none"}` }}>
                         <li className="menu-item nav-item vankine_menu_image">
                             <Link href="/" className="nav_link image_big_on_menu_two">
                                 <span className="img-link">
@@ -76,60 +77,52 @@ export default function Sidebar() {
                             </Link>
                         </li>
                     </ul>
-                    <div className="dropdown-btn" onClick={() => handleToggle(1)}><span className="fa fa-angle-down" /></div>
-                </li>
-                <li className="menu-item  menu-item-has-children dropdown  mennucolumn_ nav-item">
-                    <Link href="#" className="nav_link">
-                        <span className="text-link">
-                            Pages
-                        </span>
-                    </Link>
-                    <ul className="sub_menu" style={{ display: `${isActive.key == 2 ? "block" : "none"}` }}>
-                        <li className="menu-item nav-item">
-                            <Link href="/about-us" className="nav_link">
-                                <span className="text-link"> About
-                                    Us
-                                </span>
-                            </Link>
-                        </li>
-                        <li className="menu-item nav-item">
-                            <Link href="/faqs" className="nav_link">
-                                <span className="text-link">
-                                    Faq’s
-                                </span>
-                            </Link>
-                        </li>
-                        <li className="menu-item   nav-item">
-                            <Link href="/pricing" className="nav_link">
-                                <span className="text-link">
-                                    Pricing
-                                </span>
-                            </Link>
-                        </li>
-                        <li className="menu-item   nav-item">
-                            <Link href="/team" className="nav_link">
-                                <span className="text-link">
-                                    Team
-                                </span>
-                            </Link>
-                        </li>
-                        <li className="menu-item   nav-item">
-                            <Link href="/team-detail" className="nav_link">
-                                <span className="text-link"> Team
-                                    Detail
-                                </span>
-                            </Link>
-                        </li>
-                    </ul>
-                    <div className="dropdown-btn" onClick={() => handleToggle(2)}><span className="fa fa-angle-down" /></div>
-                </li>
-                <li className="menu-item menu-item-has-children dropdown  nav-item">
-                    <Link href="#" className="nav_link">
-                        <span className="text-link">
-                            Services
-                        </span>
-                    </Link>
-                    <ul className="sub_menu" style={{ display: `${isActive.key == 3 ? "block" : "none"}` }}>
+                    <div className="dropdown-btn" onClick={() => handleToggle(1)}><span className="fa fa-angle-down" /></div> */}
+        </li>
+        <li className="menu-item  menu-item-has-children dropdown  mennucolumn_ nav-item">
+          <Link href="#" className="nav_link">
+            <span className="text-link">Pages</span>
+          </Link>
+          <ul
+            className="sub_menu"
+            style={{ display: `${isActive.key == 2 ? "block" : "none"}` }}
+          >
+            <li className="menu-item nav-item">
+              <Link href="/about-us" className="nav_link">
+                <span className="text-link"> About Us</span>
+              </Link>
+            </li>
+            <li className="menu-item nav-item">
+              <Link href="/faqs" className="nav_link">
+                <span className="text-link">Faq’s</span>
+              </Link>
+            </li>
+            <li className="menu-item   nav-item">
+              <Link href="/pricing" className="nav_link">
+                <span className="text-link">Pricing</span>
+              </Link>
+            </li>
+            <li className="menu-item   nav-item">
+              <Link href="/team" className="nav_link">
+                <span className="text-link">Team</span>
+              </Link>
+            </li>
+            <li className="menu-item   nav-item">
+              <Link href="/team-detail" className="nav_link">
+                <span className="text-link"> Team Detail</span>
+              </Link>
+            </li>
+          </ul>
+          <div className="dropdown-btn" onClick={() => handleToggle(2)}>
+            <span className="fa fa-angle-down" />
+          </div>
+        </li>
+        <li className="menu-item menu-item-has-children dropdown  nav-item">
+          <Link href="/service" className="nav_link">
+            <span className="text-link">Services</span>
+          </Link>
+          {/* REMOVED SERVICE SUB MENU */}
+          {/* <ul className="sub_menu" style={{ display: `${isActive.key == 3 ? "block" : "none"}` }}>
                         <li className="menu-item nav-item">
                             <Link href="/service" className="nav_link">
                                 <span className="text-link">
@@ -180,15 +173,14 @@ export default function Sidebar() {
                             </Link>
                         </li>
                     </ul>
-                    <div className="dropdown-btn" onClick={() => handleToggle(3)}><span className="fa fa-angle-down" /></div>
-                </li>
-                <li className="menu-item  menu-item-has-children dropdown  mennucolumn_  nav-item">
-                    <Link href="#" className="nav_link">
-                        <span className="text-link">
-                            Portfolio
-                        </span>
-                    </Link>
-                    <ul className="sub_menu" style={{ display: `${isActive.key == 4 ? "block" : "none"}` }}>
+                    <div className="dropdown-btn" onClick={() => handleToggle(3)}><span className="fa fa-angle-down" /></div> */}
+        </li>
+        <li className="menu-item  menu-item-has-children dropdown  mennucolumn_  nav-item">
+          <Link href="/portfolio" className="nav_link">
+            <span className="text-link">Portfolio</span>
+          </Link>
+          {/* REMOVED PORTFOLIO SUB MENU */}
+          {/* <ul className="sub_menu" style={{ display: `${isActive.key == 4 ? "block" : "none"}` }}>
                         <li className="menu-item nav-item">
                             <Link href="/portfolio-style-1" className="nav_link">
                                 <span className="text-link">
@@ -211,15 +203,14 @@ export default function Sidebar() {
                             </Link>
                         </li>
                     </ul>
-                    <div className="dropdown-btn" onClick={() => handleToggle(4)}><span className="fa fa-angle-down" /></div>
-                </li>
-                <li className="menu-item  menu-item-has-children dropdown  mennucolumn_two   nav-item">
-                    <Link href="/blog" className="nav_link">
-                        <span className="text-link">
-                            Blog
-                        </span>
-                    </Link>
-                    <ul className="sub_menu" style={{ display: `${isActive.key == 5 ? "block" : "none"}` }}>
+                    <div className="dropdown-btn" onClick={() => handleToggle(4)}><span className="fa fa-angle-down" /></div> */}
+        </li>
+        <li className="menu-item  menu-item-has-children dropdown  mennucolumn_two   nav-item">
+          <Link href="/blog" className="nav_link">
+            <span className="text-link">Blog</span>
+          </Link>
+          {/* ReMOVED BLOG SUB MENU */}
+          {/* <ul className="sub_menu" style={{ display: `${isActive.key == 5 ? "block" : "none"}` }}>
                         <li className="menu-item menu-item-has-children dropdown  nav-item">
                             <Link href="#" className="nav_link">
                                 <span className="text-link">
@@ -278,61 +269,53 @@ export default function Sidebar() {
                             </ul>
                         </li>
                     </ul>
-                    <div className="dropdown-btn" onClick={() => handleToggle(5)}><span className="fa fa-angle-down" /></div>
-                </li>
-                <li className="menu-item  menu-item-has-children dropdown  mennucolumn_  nav-item">
-                    <Link href="/shop" className="nav_link">
-                        <span className="text-link">
-                            Shop
-                        </span>
-                    </Link>
-                    <ul className="sub_menu" style={{ display: `${isActive.key == 1 ? "block" : "none"}` }}>
-                        <li className="menu-item nav-item">
-                            <Link href="/shop" className="nav_link">
-                                <span className="text-link">
-                                    Products
-                                </span>
-                            </Link>
-                        </li>
-                        <li className="menu-item nav-item">
-                            <Link href="/shop-details" className="nav_link">
-                                <span className="text-link">
-                                    Product Details
-                                </span>
-                            </Link>
-                        </li>
-                        <li className="menu-item nav-item">
-                            <Link href="/my-account" className="nav_link">
-                                <span className="text-link">
-                                    My account
-                                </span>
-                            </Link>
-                        </li>
-                        <li className="menu-item nav-item">
-                            <Link href="/cart" className="nav_link">
-                                <span className="text-link">
-                                    Cart
-                                </span>
-                            </Link>
-                        </li>
-                        <li className="menu-item nav-item">
-                            <Link href="/checkout" className="nav_link">
-                                <span className="text-link">
-                                    Checkout
-                                </span>
-                            </Link>
-                        </li>
-                    </ul>
-                    <div className="dropdown-btn" onClick={() => handleToggle(1)}><span className="fa fa-angle-down" /></div>
-                </li>
-                <li className="menu-item  nav-item">
-                    <Link href="/contact" className="nav_link">
-                        <span className="text-link">
-                            Contact
-                        </span>
-                    </Link>
-                </li>
-            </ul>
-        </>
-    )
+                    <div className="dropdown-btn" onClick={() => handleToggle(5)}><span className="fa fa-angle-down" /></div> */}
+        </li>
+        {/* REMOVED SHOP */}
+        {/* <li className="menu-item  menu-item-has-children dropdown  mennucolumn_  nav-item">
+          <Link href="/shop" className="nav_link">
+            <span className="text-link">Shop</span>
+          </Link>
+          <ul
+            className="sub_menu"
+            style={{ display: `${isActive.key == 1 ? "block" : "none"}` }}
+          >
+            <li className="menu-item nav-item">
+              <Link href="/shop" className="nav_link">
+                <span className="text-link">Products</span>
+              </Link>
+            </li>
+            <li className="menu-item nav-item">
+              <Link href="/shop-details" className="nav_link">
+                <span className="text-link">Product Details</span>
+              </Link>
+            </li>
+            <li className="menu-item nav-item">
+              <Link href="/my-account" className="nav_link">
+                <span className="text-link">My account</span>
+              </Link>
+            </li>
+            <li className="menu-item nav-item">
+              <Link href="/cart" className="nav_link">
+                <span className="text-link">Cart</span>
+              </Link>
+            </li>
+            <li className="menu-item nav-item">
+              <Link href="/checkout" className="nav_link">
+                <span className="text-link">Checkout</span>
+              </Link>
+            </li>
+          </ul>
+          <div className="dropdown-btn" onClick={() => handleToggle(1)}>
+            <span className="fa fa-angle-down" />
+          </div>
+        </li> */}
+        <li className="menu-item  nav-item">
+          <Link href="/contact" className="nav_link">
+            <span className="text-link">Contact</span>
+          </Link>
+        </li>
+      </ul>
+    </>
+  );
 }
