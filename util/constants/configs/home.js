@@ -32,7 +32,7 @@ const homePageConfig = {
   },
   services1: {
     sectionTitle: {
-      smallTitle: "What We Offer",
+      smallTitle: "Offer",
       mainTitle: "Key Features For your Insurance Business",
     },
     description:
