@@ -55,10 +55,10 @@ export default function Slider1() {
                         </div>
                         <h6 className="animate_up">
                           <img
-                            src={slide.icon}
+                            src={"/assets/images/slider/Icon-white.png"}
                             className="img-fluid"
                             alt="icon"
-                          />{" "}
+                          />
                           {slide.subText}
                         </h6>
                         <h1 className="animate_left">{slide.heading}</h1>

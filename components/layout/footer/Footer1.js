@@ -543,7 +543,7 @@ export default function Footer1({}) {
                           />
                         </div>
                         <Link className="links color_white" href="#">
-                          Copyright {new Date().getFullYear()}, Vankine. All
+                          Copyright {new Date().getFullYear()}, Neidrotech. All
                           Rights Reserved
                         </Link>
                       </div>
