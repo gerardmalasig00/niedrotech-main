@@ -27,7 +27,7 @@ const swiperOptions = {
   },
 };
 export default function Slider1() {
-  const { slides, navIcons } = contentConfig.homePageConfig.sliderContent;
+  const { slides } = contentConfig.homePageConfig.sliderContent;
   return (
     <>
       <section className="slider style_one">

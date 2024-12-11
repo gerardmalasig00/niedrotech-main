@@ -48,28 +48,6 @@ export default function Form1() {
               </div>
               <div className="pd_bottom_40" />
               <section className="fom_tab_box custom_tabs type_one">
-                <ul
-                  className="nav nav-tabs links trans justify-content-center"
-                  role="tablist"
-                >
-                  {formDetails.map((tab) => (
-                    <li
-                      className="nav-item"
-                      key={tab.id}
-                      onClick={() => handleOnClick(tab.id)}
-                    >
-                      <button
-                        className={
-                          activeIndex === tab.id
-                            ? "nav-link active"
-                            : "nav-link"
-                        }
-                      >
-                        {tab.title}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
                 <div className="s_tabs_content tab-content">
                   {formDetails.map((tab) => (
                     <div
@@ -116,20 +94,18 @@ export default function Form1() {
                                 />
                               </div>
                               <div className="col-lg-3 col-md-3 col-sm-12">
-                                <label>Insurance Type</label>
+                                <label>Solution Type</label>
                                 <select>
-                                  <option value="Business">Business</option>
-                                  <option value="Fire">Fire</option>
-                                  <option value="Car">Car</option>
-                                  <option value="Life">Life</option>
-                                  <option value="House">House</option>
-                                  <option value="Marrige">Marrige</option>
-                                  <option value="Medical">Medical</option>
-                                  <option value="Travel">Travel</option>
+                                  <option>Cloud Computing</option>
+                                  <option>AI Solutions</option>
+                                  <option>Cybersecurity</option>
+                                  <option>Software Development</option>
+                                  <option>Data Analytics</option>
+                                  <option>IoT Solutions</option>
                                 </select>
                               </div>
                               <div className="col-lg-6 col-md-6 col-sm-12">
-                                <label>Limite Of Balance</label>
+                                <label>Budget</label>
                                 <input
                                   type="range"
                                   name="range"
