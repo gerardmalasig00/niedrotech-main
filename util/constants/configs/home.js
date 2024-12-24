@@ -52,7 +52,7 @@ const homePageConfig = {
       },
       {
         step: "3",
-        title: "Future-Ready Digital Tools",
+        title: "Future-AI Ready Digital Tools",
         description: "Enhance productivity and drive innovation.",
         readMore: "Learn More",
       },
