@@ -80,10 +80,13 @@ export default function Sidebar() {
                     <div className="dropdown-btn" onClick={() => handleToggle(1)}><span className="fa fa-angle-down" /></div> */}
         </li>
         <li className="menu-item  menu-item-has-children dropdown  mennucolumn_ nav-item">
-          <Link href="#" className="nav_link">
+          {/* <Link href="#" className="nav_link">
             <span className="text-link">Pages</span>
+          </Link> */}
+          <Link href="/about-us" className="nav_link">
+            <span className="text-link"> About Us</span>
           </Link>
-          <ul
+          {/* <ul
             className="sub_menu"
             style={{ display: `${isActive.key == 2 ? "block" : "none"}` }}
           >
@@ -112,7 +115,7 @@ export default function Sidebar() {
                 <span className="text-link"> Team Detail</span>
               </Link>
             </li>
-          </ul>
+          </ul> */}
           <div className="dropdown-btn" onClick={() => handleToggle(2)}>
             <span className="fa fa-angle-down" />
           </div>
