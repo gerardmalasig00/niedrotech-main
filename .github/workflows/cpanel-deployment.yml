@@ -25,8 +25,10 @@ jobs:
       run: |
         npm run build
 
-    - name: Deploy to cPanel with rsync
-      run: |
-        rsync -avz --delete --exclude='.htaccess' --exclude='cgi-bin/' --exclude='{mydomain}.com/' -e "ssh -o StrictHostKeyChecking=no" out/ ${{ secrets.CPANEL_SSH_USER }}@${{ secrets.CPANEL_SSH_HOST }}:${{ secrets.CPANEL_PATH }}
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.CPANEL_SSH_KEY }}
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.CPANEL_FTP_SERVER }}
+        username: ${{ secrets.CPANEL_FTP_USERNAME }}
+        password: ${{ secrets.CPANEL_FTP_PASSWORD }}
+        dry-run: true
