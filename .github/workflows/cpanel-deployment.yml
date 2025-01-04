@@ -33,3 +33,6 @@ jobs:
         password: ${{ secrets.CPANEL_FTP_PASSWORD }}
         protocol: ftps
         local-dir: out/
+        passive: true
+        log-level: verbose
+        dry-run: true
