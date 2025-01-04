@@ -25,6 +25,14 @@ jobs:
         run: |
           npm run build
 
+      - name: Set up SSH for cPanel
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.CPANEL_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          # Disable SSH host key checking to avoid fingerprint prompt
+          echo -e "Host *\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null" >> ~/.ssh/config
+
       - name: Configure Git user
         run: |
           git config --global user.email "ge@niedrotech.com"
