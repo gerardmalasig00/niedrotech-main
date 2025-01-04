@@ -1,0 +1,48 @@
+name: Deploy Next.js to cPanel DEV Environment
+
+on:
+  push:
+    branches:
+      - develop  # Trigger deployment on 'develop' branch push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+  
+      - name: Build and Export
+        run: |
+          npm run build
+
+      - name: Push only the 'out' folder to cPanel Git repository
+        run: |
+          # Initialize Git repository
+          git init
+          
+          # Add the cPanel Git repository as a remote
+          git remote add cpanel ${{ secrets.CPANEL_DEV_REPO }}
+          
+          # Copy the content of the 'out' folder to the repo
+          mkdir -p .deploy
+          cp -r out/* .deploy/
+          
+          # Navigate to the deployment folder
+          cd .deploy
+          
+          # Add the changes to git
+          git add .
+          git commit -m "Deploy Next.js build to DEV repo"
+          
+          # Push only the 'out' folder content to the cPanel repository
+          git push cpanel master  # or 'main' if that's your default branch
