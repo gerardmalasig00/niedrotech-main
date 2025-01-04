@@ -1,0 +1,33 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build and Export
+      run: |
+        npm run build
+        npm run export
+
+    - name: Deploy to cPanel with rsync
+      run: |
+        rsync -avz --delete --exclude='.htaccess' --exclude='cgi-bin/' --exclude='{mydomain}.com/' -e "ssh -o StrictHostKeyChecking=no" out/ ${{ secrets.CPANEL_SSH_USER }}@${{ secrets.CPANEL_SSH_HOST }}:${{ secrets.CPANEL_PATH }}
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.CPANEL_SSH_KEY }}
