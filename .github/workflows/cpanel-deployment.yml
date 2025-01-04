@@ -26,13 +26,12 @@ jobs:
         npm run build
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      uses: easingthemes/ssh-deploy@main
       with:
-        server: ${{ secrets.CPANEL_FTP_SERVER }}
-        username: ${{ secrets.CPANEL_FTP_USERNAME }}
-        password: ${{ secrets.CPANEL_FTP_PASSWORD }}
-        protocol: ftps
-        local-dir: out/
-        passive: true
-        log-level: verbose
-        time-out: 60000 
+        SSH_PRIVATE_KEY: ${{ secrets.CPANEL_SSH_KEY }}
+        ARGS: "-rlgoDzvc -i --delete"
+        SOURCE: "out/"
+        REMOTE_HOST: ${{ secrets.CPANEL_SSH_HOST }}  # e.g., mydomain.com or 123.45.67.89
+        REMOTE_USER: ${{ secrets.CPANEL_SSH_USER }}  # e.g., username
+        TARGET: "/home/niedrxmf/public_html"  # Adjust the 'username' to your actual cPanel username
+        EXCLUDE: "/dist/, /node_modules/"
