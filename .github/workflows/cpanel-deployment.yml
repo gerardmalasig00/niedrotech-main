@@ -35,4 +35,3 @@ jobs:
         local-dir: out/
         passive: true
         log-level: verbose
-        dry-run: true
