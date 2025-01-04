@@ -35,3 +35,4 @@ jobs:
         local-dir: out/
         passive: true
         log-level: verbose
+        time-out: 60000 
