@@ -25,6 +25,11 @@ jobs:
         run: |
           npm run build
 
+      - name: Configure Git user
+        run: |
+          git config --global user.email "ge@niedrotech.com"
+          git config --global user.name "Gem"
+
       - name: Push only the 'out' folder to cPanel Git repository
         run: |
           # Initialize Git repository
