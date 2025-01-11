@@ -10,6 +10,7 @@
         "sass": "sass --watch public/assets/css/theme.scss:public/assets/css/theme.css"
     },
     "dependencies": {
+        "@emailjs/browser": "^4.4.1",
         "eslint": "8.40.0",
         "eslint-config-next": "13.4.1",
         "isotope-layout": "^3.0.6",

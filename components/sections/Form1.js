@@ -1,18 +1,52 @@
 import contentConfig from "@/util/constants/configs/contentConfig";
 import { useState } from "react";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+const swiperOptions = {
+  modules: [Pagination, Navigation],
+  slidesPerView: 1,
+  spaceBetween: 0,
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
+  // loop: true,
+
+  // Navigation
+  navigation: {
+    nextEl: ".owl-next",
+    prevEl: ".owl-prev",
+  },
+
+  // Pagination
+  pagination: {
+    // el: '.swiper-pagination',
+    clickable: true,
+  },
+};
 
 export default function Form1() {
-  const [activeIndex, setActiveIndex] = useState(1);
-  const handleOnClick = (index) => {
-    setActiveIndex(index);
+  const [isActive, setIsActive] = useState({
+    status: false,
+    key: 1,
+  });
+
+  const handleToggle = (key) => {
+    if (isActive.key === key) {
+      setIsActive({
+        status: false,
+      });
+    } else {
+      setIsActive({
+        status: true,
+        key,
+      });
+    }
   };
 
-  const {
-    sectionTitle,
-    sectionSubtitleTop,
-    sectionSubtitleBottom,
-    formDetails,
-  } = contentConfig.homePageConfig.form1;
+  const { sectionTitle, sectionSubtitleTop, sectionSubtitleBottom, reasons } =
+    contentConfig.homePageConfig.form1;
   return (
     <>
       <section className="form-section bg_light_1 position-relative">
@@ -38,95 +72,48 @@ export default function Form1() {
             <div className="col-lg-6 col-md-6 col-sm-12">
               <div className="section_title text-center type_one">
                 <h4 className="sm_title">{sectionTitle}</h4>
-                <div className="title_whole">
-                  <h2 className="title">
-                    {sectionSubtitleTop}
-                    <br />
-                    {sectionSubtitleBottom}
-                  </h2>
-                </div>
               </div>
               <div className="pd_bottom_40" />
               <section className="fom_tab_box custom_tabs type_one">
-                <div className="s_tabs_content tab-content">
-                  {formDetails.map((tab) => (
-                    <div
-                      key={tab.id}
-                      className={
-                        activeIndex === tab.id ? "tab-pane active" : "tab-pane"
-                      }
-                    >
-                      <div className="contentbox">
-                        <div className="contact_form_shortcode">
-                          <form method="post" action="#">
-                            <div className="row">
-                              <div className="col-lg-4 col-md-4 col-sm-12">
-                                <label>
-                                  Your Full Name <span>*</span>
-                                </label>
-                                <input
-                                  type="text"
-                                  name="name"
-                                  placeholder="Larry D. McMahon"
-                                  required
-                                />
-                              </div>
-                              <div className="col-lg-4 col-md-4 col-sm-12">
-                                <label>Phone</label>
-                                <input
-                                  type="text"
-                                  name="phone"
-                                  placeholder="+000 (123) 456 88"
-                                />
-                              </div>
-                              <div className="col-lg-4 col-md-4 col-sm-12">
-                                <label>
-                                  Email Address{" "}
-                                  <span className="wpforms-required-label">
-                                    *
-                                  </span>
-                                </label>
-                                <input
-                                  type="email"
-                                  name="email"
-                                  placeholder="support@gmail.com"
-                                  required
-                                />
-                              </div>
-                              <div className="col-lg-3 col-md-3 col-sm-12">
-                                <label>Solution Type</label>
-                                <select>
-                                  <option>Cloud Computing</option>
-                                  <option>AI Solutions</option>
-                                  <option>Cybersecurity</option>
-                                  <option>Software Development</option>
-                                  <option>Data Analytics</option>
-                                  <option>IoT Solutions</option>
-                                </select>
-                              </div>
-                              <div className="col-lg-6 col-md-6 col-sm-12">
-                                <label>Budget</label>
-                                <input
-                                  type="range"
-                                  name="range"
-                                  min={0}
-                                  max={8560}
-                                  step={1}
-                                  style={{ width: "100%" }}
-                                />
-                                <div className="slider-hint">
-                                  Selected Value: <b>4000</b>
-                                </div>
-                              </div>
-                              <div className="col-lg-3 col-md-3 col-sm-12  text-md-end">
-                                <button type="submit">Get a Guote</button>
-                              </div>
+                <div className="block_faq">
+                  <div className="accordion-box">
+                    {reasons.map((reason, index) => (
+                      <div
+                        key={index}
+                        className={
+                          isActive.key === index
+                            ? "accordion active-block"
+                            : "accordion"
+                        }
+                      >
+                        <div
+                          className={
+                            isActive.key === index
+                              ? "question faq_header active"
+                              : "question faq_header"
+                          }
+                          onClick={() => handleToggle(index)}
+                        >
+                          <div className="question_box">
+                            <div className="title_no_a_18 trans">
+                              {reason.title}
                             </div>
-                          </form>
+                            <span
+                              className={`icon_fq trans fi-rs-arrow-small-right`}
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className="answer accordion-content"
+                          style={{
+                            display: isActive.key === index ? "block" : "none",
+                          }}
+                        >
+                          {reason.paragraph}
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </section>
               <div className="pd_bottom_90" />

@@ -5,7 +5,7 @@ import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const swiperOptions = {
-  modules: [Autoplay, Pagination, Navigation],
+  modules: [Pagination, Navigation],
   slidesPerView: 1,
   spaceBetween: 0,
   autoplay: {
@@ -46,13 +46,7 @@ export default function Slider1() {
                   <div className="row align-items-center">
                     <div className="col-md-7">
                       <div className="slider_content">
-                        <div className="bg_image animate_up">
-                          <img
-                            src={slide.bgImage}
-                            className="img-fluid"
-                            alt="ptimage"
-                          />
-                        </div>
+                        <div className="bg_slider-skewed animate_up"></div>
                         <h6 className="animate_up">
                           <img
                             src={"/assets/images/slider/Icon-white.png"}

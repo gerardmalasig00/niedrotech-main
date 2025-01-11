@@ -6,7 +6,7 @@ const homePageConfig = {
         bgImage: "/assets/images/slider/shape-1.png",
         icon: "/assets/images/slider/Icon-white.png",
         subText: "Elevate Your Business",
-        heading: "Tech for Tomorrow",
+        heading: "Innovate Without Limits",
         buttonText: "Discover More",
         buttonLink: "#",
       },
@@ -15,7 +15,7 @@ const homePageConfig = {
         bgImage: "/assets/images/slider/shape-1.png",
         icon: "/assets/images/slider/icon-white.png",
         subText: "Seamless Integration",
-        heading: "Advanced Tech Solutions",
+        heading: "Bringing AI Expertise to Your Doorstep",
         buttonText: "Discover More",
         buttonLink: "#",
       },
@@ -24,7 +24,7 @@ const homePageConfig = {
         bgImage: "/assets/images/slider/shape-1.png",
         icon: "/assets/images/slider/icon-white.png",
         subText: "Driving Innovation",
-        heading: "Future proof Technology",
+        heading: "Streamlining Success with our Solution",
         buttonText: "Discover More",
         buttonLink: "#",
       },
@@ -189,57 +189,34 @@ const homePageConfig = {
     },
   ],
   form1: {
-    sectionTitle: "Get In Touch",
+    sectionTitle: "Why Choose Us?",
     sectionSubtitleTop: "Get Started with Our",
     sectionSubtitleBottom: "Tech Solutions",
-    formDetails: [
+    reasons: [
       {
-        id: 1,
-        title: "Custom Software Development",
-        fields: [
-          {
-            label: "Your Full Name",
-            name: "name",
-            type: "text",
-            placeholder: "John Doe",
-            required: true,
-          },
-          {
-            label: "Phone",
-            name: "phone",
-            type: "text",
-            placeholder: "+123 (456) 7890",
-          },
-          {
-            label: "Email Address",
-            name: "email",
-            type: "email",
-            placeholder: "youremail@techcompany.com",
-            required: true,
-          },
-          {
-            label: "Service Type",
-            name: "serviceType",
-            type: "select",
-            options: [
-              "Cloud Computing",
-              "AI Solutions",
-              "Cybersecurity",
-              "Software Development",
-              "Data Analytics",
-              "IoT Solutions",
-            ],
-          },
-          {
-            label: "Limit Of Balance",
-            name: "range",
-            type: "range",
-            min: 0,
-            max: 8560,
-            step: 1,
-            hint: "Selected Value: 4000",
-          },
-        ],
+        title: "Expertise You Can Trust",
+        paragraph:
+          "Our team of seasoned IT professionals brings years of experience and industry know-how to deliver top-notch solutions.",
+      },
+      {
+        title: "Cutting-Edge Technology",
+        paragraph:
+          "We leverage the latest advancements in technology to offer state-of-the-art services that drive efficiency and growth.",
+      },
+      {
+        title: "Customized Solutions",
+        paragraph:
+          "Every business is unique. Our tailored IT solutions ensure that your specific needs are met with precision and care",
+      },
+      {
+        title: "Global Reach, Local Touch",
+        paragraph:
+          "With a global presence and a deep understanding of local markets, we provide solutions that are both expansive and personalized.",
+      },
+      {
+        title: "Commitment to Excellence",
+        paragraph:
+          "We pride ourselves on our commitment to delivering excellence in every project, big or small.",
       },
     ],
   },

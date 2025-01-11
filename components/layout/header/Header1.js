@@ -1,11 +1,13 @@
 import Link from "next/link";
 import NavbarNav from "../NavbarNav";
+import contentConfig from "@/util/constants/configs/contentConfig";
 
 export default function Header1({
   handleSearch,
   handleOptionalPanel,
   handleMobileMenu,
 }) {
+  const { workingHours, call, socials } = contentConfig.headerConfig;
   return (
     <>
       <div className="header_area " id="header_contents">
@@ -18,12 +20,12 @@ export default function Header1({
                   <div className="top_md d-flex align-items-center">
                     <div className="text workings">
                       <i aria-hidden="false" className="far fa-clock" /> Working
-                      Hours : <span>Sun-monday, 09am-5pm </span>{" "}
+                      Hours : <span>{workingHours}</span>{" "}
                     </div>
                     <div className="call">
-                      <Link href="tel:+000(123)456989">
+                      <Link href={`tel:${call}`}>
                         <small>Call : </small>
-                        +000(123)456989
+                        {call}
                       </Link>
                     </div>
                   </div>
@@ -48,26 +50,13 @@ export default function Header1({
                     </div>
                     <div className="social-icons">
                       <ul className="d-inline-block">
-                        <li>
-                          <Link className="m_icon" href="#">
-                            <i className="fab fa-facebook-f" />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="m_icon" href="#">
-                            <i className="fab fa-twitter" />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="m_icon" href="#">
-                            <i className="fab fa-skype" />
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="m_icon" href="#">
-                            <i className="fab fa-telegram" />
-                          </Link>
-                        </li>
+                        {socials.map((social, index) => (
+                          <li>
+                            <Link className="m_icon" href={social.link}>
+                              <i className={social.icon} />
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>

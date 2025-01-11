@@ -1,6 +1,6 @@
 const headerConfig = {
-  workingHours: "Monday to Friday: 9am to 5pm",
-  call: "+000(123)456989",
+  workingHours: "10am to 6pm",
+  call: "845-202-2915",
   socials: [
     {
       icon: "fab fa-facebook-f",
@@ -20,3 +20,5 @@ const headerConfig = {
     },
   ],
 };
+
+export default headerConfig;

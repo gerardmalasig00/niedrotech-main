@@ -417,9 +417,9 @@ export default function AboutUs() {
             <div className="row">
               <div className="col-lg-12">
                 <div className="section_title text-center color_white type_one">
-                  <h4 className="sm_title">Company Statistics Analysis</h4>
+                  <h4 className="sm_title">{section4.title}</h4>
                   <div className="title_whole">
-                    <h2 className="title">Great Achievement For Insurance</h2>
+                    <h2 className="title">{section4.subTitle}</h2>
                   </div>
                 </div>
               </div>

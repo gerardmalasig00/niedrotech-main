@@ -171,12 +171,13 @@ export default function NavbarNav() {
             <span className="fa fa-angle-down" />
           </div> */}
         </li>
-        <li className="menu-item  menu-item-has-children dropdown  mennucolumn_two   nav-item">
+        {/* REMOVED Blog SUB MENU */}
+        {/* <li className="menu-item  menu-item-has-children dropdown  mennucolumn_two   nav-item">
           <Link href="/blog" className="nav_link">
             <span className="text-link">Blog</span>
           </Link>
-          {/* REMOVED Blog SUB MENU */}
-          {/* <ul className="sub_menu">
+         
+          <ul className="sub_menu">
             <li className="menu-item menu-item-has-children dropdown  nav-item">
               <Link href="#" className="nav_link">
                 <span className="text-link">Blog Grid</span>
@@ -224,8 +225,8 @@ export default function NavbarNav() {
           </ul>
           <div className="dropdown-btn">
             <span className="fa fa-angle-down" />
-          </div> */}
-        </li>
+          </div>
+        </li> */}
         {/* <li className="menu-item  menu-item-has-children dropdown  mennucolumn_  nav-item">
           <Link href="/shop" className="nav_link">
             <span className="text-link">Shop</span>

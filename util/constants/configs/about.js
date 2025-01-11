@@ -101,7 +101,7 @@ const aboutConfig = {
   },
   section4: {
     title: "Company Statistics Analysis",
-    subTitle: "Great Achievement For Insurance",
+    subTitle: "Great Achievement For Software Development",
     achievements: [
       {
         title: "Satisfied Clients",

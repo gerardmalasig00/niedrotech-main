@@ -152,8 +152,8 @@ export default function OptionalPanel({
                   </Link>
                 </div>
                 <div className="c_pan">
-                  <Link href="mailto:sendmail@example.com">
-                    <i className="fi-rr-envelope" /> sendmail@example.com{" "}
+                  <Link href="mailto:allan@niedro.com">
+                    <i className="fi-rr-envelope" /> allan@niedro.com{" "}
                   </Link>
                 </div>
                 <div className="c_pan">
